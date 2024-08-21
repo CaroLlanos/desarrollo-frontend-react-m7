@@ -3,12 +3,14 @@ import Description from './_components/description';
 
 import Openlink from '../components/Openlink';
 import Lessoninfo from './_components/lessoninfo';
+import Contador from './_components/contador';
 
 const Default = () => {
     return (
         <>
             <header className="App-header"> 
                 <Logo />
+                <Contador />
                 <Description />
                 <Openlink title="Learn React" url="https://react.dev/" />
                 
