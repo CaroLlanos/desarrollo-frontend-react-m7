@@ -5,6 +5,8 @@ import Openlink from '../components/Openlink';
 import Lessoninfo from './_components/lessoninfo';
 import Contador from './_components/contador';
 
+import Products from './Products/Products';
+
 const Default = () => {
     return (
         <>
@@ -18,8 +20,11 @@ const Default = () => {
 
                 <Lessoninfo number="1" text="Introduccion a React y Estructura del Proyecto" />
                 <Lessoninfo number="2" text="Componentes, context API para la gestion de estados" />
-
             </header>
+            <body>
+                <br></br>
+                <Products />
+            </body>
         </>  
     );
 };

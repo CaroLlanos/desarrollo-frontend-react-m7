@@ -1,4 +1,4 @@
-const ProductCategoryRow = () => {
+const ProductCategoryRow = ({ category }) => {
     return (
         <>
             <tr>
@@ -11,4 +11,4 @@ const ProductCategoryRow = () => {
     );
 }
 
-export default ProductCateogryRow;
+export default ProductCategoryRow;
