@@ -4,6 +4,8 @@ import Default from "../screens/Default";
 import Products from '../screens/Products/Products';
 import Login from '../screens/Forms/loginForm';
 
+const basename = process.env.NODE_ENV === 'production' ? '/desarrollo-frontend-react-m7' : '/';
+
 const routes = createBrowserRouter([
     {
         path: "/",
@@ -23,6 +25,10 @@ const routes = createBrowserRouter([
             },
         ],
     },
-]);
+],
+    {
+        basename : basename
+    }
+);
 
 export default routes;
