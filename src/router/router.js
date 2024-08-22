@@ -27,7 +27,7 @@ const routes = createBrowserRouter([
     },
 ],
     {
-        basename : basename
+        basename :   basename
     }
 );
 
