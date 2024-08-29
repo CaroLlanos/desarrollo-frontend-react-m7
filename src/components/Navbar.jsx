@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+    const formData = useSelector(state => state.form.formData);
+
     return (
         <nav>
             <ul>
@@ -17,6 +20,12 @@ const Navbar = () => {
                     <Link to="/login">Login</Link>
                 </li>
             </ul>
+            <div className='user-info'>
+                {formData.username && formData.email && (
+                    <span>Bienvenido {formData.username}: {formData.email}</span>
+                )}
+            </div>
+            
         </nav>
     );
 };

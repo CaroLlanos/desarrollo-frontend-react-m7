@@ -17,7 +17,7 @@ const ModalInfo = ({ visible, message, onClose }) => {
                         { message }
                     </p>
                 </div>
-                <button className="close-btn-sucess" onClick={onClose}>X</button>
+                <button className="close-btn-success" onClick={onClose}>X</button>
             </motion.div>
         </div>
     );

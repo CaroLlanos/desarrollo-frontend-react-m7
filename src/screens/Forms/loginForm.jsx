@@ -5,27 +5,45 @@ import { motion } from 'framer-motion';
 import ModalInfo from "../../components/ModalInfo";
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
     const [values, handleChange] = useForm({ username: '', email: '', password: '' });
     const [showModalInfo, setShowModalInfo] = useState(true);
+    const [showModalPassword, setShowModalPassword] = useState(false);
+    const [showModalLogout, setShowModalLogout] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
     const form = useSelector(state => state.form);
     const dispatch = useDispatch();
+    const navegar = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(values);
-        dispatch(saveFormData(values));
+        //dispatch(saveFormData(values));
+
+        if (values.password === 'mod7ReactUSIP') {
+            dispatch(saveFormData(values));
+            navegar('/');
+        } else {
+            setShowModalPassword(true);
+        }
     }
 
     const hideModalInfo = () => {
         setShowModalInfo(false);
     };
 
-    const showModal = () => {
-        setShowModalInfo(true);
+    const hideModalPassword = () => {
+        setShowModalPassword(false);
+    };
+
+    const hideModalLogout = () => {
+        setShowModalLogout(false);
     }
+    //const showModal = () => {
+    //    setShowModalInfo(true);
+    //}
 
     const passwordText = () => {
         setShowPassword(!showPassword);
@@ -40,8 +58,18 @@ const LoginForm = () => {
         >
             <ModalInfo
                 visible={showModalInfo}
-                message="Bienvenidos al Modulo 8"
+                message="Bienvenidos al Modulo 7"
                 onClose={hideModalInfo}
+            />
+            <ModalInfo
+                visible={showModalPassword}
+                message="Password Incorrecto"
+                onClose={hideModalPassword}
+            />
+            <ModalInfo
+                visible={showModalLogout}
+                message="¿Estas seguro de que quieres cerrar sesion?"
+                onClose={hideModalLogout}
             />
         <div className = "container">
                 <form onSubmit={handleSubmit}>
@@ -63,12 +91,13 @@ const LoginForm = () => {
                     <input type={showPassword ? "text" : "password"} id="password" name="password" value={values.password} onChange={handleChange}>
                     </input>
                         <button type="button" onClick={passwordText}>
-                            {showPassword ? "Ocultar" : "Mostrar"} Password
+                            {showPassword ? "Ocultar" : "Mostrar"}
                     </button>    
                 </div>
 
                 <div className = "button-container">
                     <button type="submit">Submit</button>
+                    {/*<a>Logout</a>*/}
                 </div>
             </form>
             </div>
