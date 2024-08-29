@@ -9,6 +9,7 @@ import { useState } from "react";
 const LoginForm = () => {
     const [values, handleChange] = useForm({ username: '', email: '', password: '' });
     const [showModalInfo, setShowModalInfo] = useState(true);
+    const [showPassword, setShowPassword] = useState(false);
     const form = useSelector(state => state.form);
     const dispatch = useDispatch();
 
@@ -24,6 +25,10 @@ const LoginForm = () => {
 
     const showModal = () => {
         setShowModalInfo(true);
+    }
+
+    const passwordText = () => {
+        setShowPassword(!showPassword);
     }
 
     return (
@@ -55,8 +60,11 @@ const LoginForm = () => {
                 </div>
                 <div>
                     <label htmlFor="password">Password</label>
-                    <input type="password" id="password" name="password" value={values.password} onChange={handleChange}>
+                    <input type={showPassword ? "text" : "password"} id="password" name="password" value={values.password} onChange={handleChange}>
                     </input>
+                        <button type="button" onClick={passwordText}>
+                            {showPassword ? "Ocultar" : "Mostrar"} Password
+                    </button>    
                 </div>
 
                 <div className = "button-container">
