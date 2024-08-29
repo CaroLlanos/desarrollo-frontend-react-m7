@@ -11,7 +11,11 @@ const useForm = (initialValues) => {
         });
     };
 
-    return [values, handleChange];
+    const cleanForm = () => {
+        setValues(initialValues);
+    }
+
+    return [values, handleChange, cleanForm];
 }
 
 export default useForm;

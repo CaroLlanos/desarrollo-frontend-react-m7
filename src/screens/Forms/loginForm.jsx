@@ -1,14 +1,16 @@
 import useForm from "../../components/hooks/useForm";
 import { useSelector, useDispatch } from 'react-redux';
 import { saveFormData } from "../../redux/Form/formActions";
+import { cleanFormData } from "../../redux/Form/formActions";
 import { motion } from 'framer-motion';
 import ModalInfo from "../../components/ModalInfo";
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const LoginForm = () => {
-    const [values, handleChange] = useForm({ username: '', email: '', password: '' });
+    const [values, handleChange, cleanForm] = useForm({ username: '', email: '', password: '' });
     const [showModalInfo, setShowModalInfo] = useState(true);
     const [showModalPassword, setShowModalPassword] = useState(false);
     const [showModalLogout, setShowModalLogout] = useState(false);
@@ -48,6 +50,15 @@ const LoginForm = () => {
     const passwordText = () => {
         setShowPassword(!showPassword);
     }
+    const handleLogoutClick = () => {
+        setShowModalLogout(true);
+    };
+
+    const handleLogoutConfirm = () => {
+        dispatch(cleanFormData());
+        cleanForm();
+        setShowModalLogout(false);
+    }
 
     return (
         
@@ -68,7 +79,12 @@ const LoginForm = () => {
             />
             <ModalInfo
                 visible={showModalLogout}
-                message="¿Estas seguro de que quieres cerrar sesion?"
+                message={
+                    <span>
+                    ¿Estas seguro de que quieres cerrar sesion?   
+                    <button onClick={handleLogoutConfirm}>Presiona para salir</button>
+                    </span>
+                }
                 onClose={hideModalLogout}
             />
         <div className = "container">
@@ -97,7 +113,7 @@ const LoginForm = () => {
 
                 <div className = "button-container">
                     <button type="submit">Submit</button>
-                    {/*<a>Logout</a>*/}
+                    <Link onClick={handleLogoutClick}>Logout</Link>
                 </div>
             </form>
             </div>
