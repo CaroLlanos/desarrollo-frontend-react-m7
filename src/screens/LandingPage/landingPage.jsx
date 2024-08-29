@@ -32,6 +32,9 @@ const LandingPage = () => {
                     <p>
                         Para profundizar en los temas cubiertos, consulta los siguientes recursos:
                     </p>
+                    <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
+                        React
+                    </a>
                 </section>
             </main>
             <footer>

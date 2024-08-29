@@ -8,7 +8,7 @@ const Description = () => {
 
     useEffect(() => {
         dispatch(setNameModule('Desarrollo Frontend con React'))
-    }, []);
+    }, [dispatch]);
     return (
         <>
             <p>Edit <code>src/App.js</code> and save to reload.</p>

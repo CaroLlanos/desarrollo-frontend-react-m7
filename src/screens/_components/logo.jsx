@@ -10,7 +10,7 @@ const Logo = () => {
 
     useEffect(() => {
         dispatch(setNameModule('Desarrollo Frontend con React'))
-    }, [] );
+    }, [dispatch] );
     return (
         <>
             <img src={logo} className="App-logo" alt="logo" />
