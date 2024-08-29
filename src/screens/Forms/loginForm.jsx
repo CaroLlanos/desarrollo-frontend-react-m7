@@ -24,7 +24,7 @@ const LoginForm = () => {
         console.log(values);
         //dispatch(saveFormData(values));
 
-        if (values.password === 'mod7ReactUSIP') {
+        if (values.password === 'mod7ReactUSIP' && values.email && values.username) {
             dispatch(saveFormData(values));
             navegar('/');
         } else {
@@ -113,7 +113,7 @@ const LoginForm = () => {
 
                 <div className = "button-container">
                     <button type="submit">Submit</button>
-                    <Link onClick={handleLogoutClick}>Logout</Link>
+                    <Link className="link-logout" onClick={handleLogoutClick}>Logout</Link>
                 </div>
             </form>
             </div>

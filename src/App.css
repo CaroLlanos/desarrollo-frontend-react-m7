@@ -116,6 +116,10 @@ form div input {
   margin-top: 10px;
 }
 
+.link-logout {
+  margin-left: 2rem;
+}
+
 /*style modals*/
 .modal-overlay {
   position: fixed;
