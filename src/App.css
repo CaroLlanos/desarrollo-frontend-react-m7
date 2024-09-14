@@ -187,3 +187,68 @@ footer {
   padding: 10px;
   margin-top: 20px;
 }
+
+/* Style Dictionary */
+
+.dictionary {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+.navbar-dic {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #ddd;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.nav-buttons .icon {
+  background: none;
+  border: none;
+  font-size: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.urlbar-dic{
+  flex: 1;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.search-icon-dic{
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.content-dic{
+  text-align: center;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.traslate-button, .dictionary-button{
+  background-color: white;
+  border: 3px solid black;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 5px 5px 0px black;
+  transition: all 0.2s ease-in-out;
+}
+

@@ -19,6 +19,9 @@ const Navbar = () => {
                 <li>
                     <Link to="/login">Login</Link>
                 </li>
+                <li>
+                    <Link to="/dictionary">Diccionario</Link>
+                </li>
             </ul>
             <div className='user-info'>
                 {formData.username && formData.email && (

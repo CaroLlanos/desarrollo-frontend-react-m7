@@ -4,6 +4,7 @@ import Default from "../screens/Default";
 import Products from '../screens/Products/Products';
 import Login from '../screens/Forms/loginForm';
 import LandingPage from "../screens/LandingPage/landingPage";
+import Dictionary from '../screens/dictionary/dictionary';
 
 const basename = process.env.NODE_ENV === 'production' ? '/desarrollo-frontend-react-m7' : '/';
 
@@ -20,13 +21,17 @@ const routes = createBrowserRouter([
                 path: "/default",
                 element: <Default />,
             },
-             {
+            {
                 path: "/products",
                 element: <Products />,
             },
-             {
+            {
                 path: "/login",
                 element: <Login />,
+            },
+            {
+                path: "/dictionary",
+                element: <Dictionary />,
             },
         ],
     },
