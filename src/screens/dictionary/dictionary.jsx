@@ -180,13 +180,14 @@ const Dictionary = () => {
                     />
                 </div>
                 <div>
-                    <label>Idioma de Traduccion</label>
-                    {/*<select id="language">
+                    {/*<label>Idioma de Traduccion</label>
+                    <select id="language">
                         <option>Ingles</option>
                         <option>Espanol</option>
                         <option>Portugues</option>
                     </select>*/}
                 </div>
+                <br></br>
                 <div>
                     <textarea className="form-traslate-textarea" readOnly value={traduccion}></textarea>
                 </div>
