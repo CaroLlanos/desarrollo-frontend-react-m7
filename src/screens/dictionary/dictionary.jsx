@@ -113,8 +113,8 @@ const Dictionary = () => {
                 <p>Este <span style={{ fontWeight: 'bold', fontSize: 'larger'}}>modulo (diccionario)</span> corresponde <span style={{ fontSize: 'x-large'}}>al recuperatorio del</span> <span style={{ color: 'red', fontWeight: 'bold', fontSize: 'larger' }}>modulo-7</span> ReactJS. <span style={{fontSize: 'x-large'}}>URL:</span> https://carollanos.github.io/desarrollo-frontend/dictionary</p>
                 
                 <div className="button-group">
-                    <button className="dictionary-button" onClick={() => setShowModalAnadir(true)}>Agregar palabra</button>
-                    <button className="dictionary-button" onClick={() => setShowModalEliminar(true)}>Eliminar palabra</button>
+                    <button className="dictionary-button" onClick={() => setShowModalAnadir(true)}>Agregar Palabra</button>
+                    <button className="dictionary-button" onClick={() => setShowModalEliminar(true)}>Eliminar Palabra</button>
                 </div>
                 <button className="traslate-button" onClick={() => setShowModalTraducir(true)}>Traducir</button>
 
@@ -127,26 +127,27 @@ const Dictionary = () => {
                 onClose={hideModalAnadir}
             >
                 <div className="modal-traslate">Modal Anadir Palabra</div>
-                <form>
+                <form className="form-traslate">
                     <br></br>
-                    <label>
+                    <label className="form-traslate-label">
                         Español:
-                        <input type="text" name="espanol" id="espanol" value={nuevaPalabra.espanol} onChange={(e) => setnuevaPalabra({ ...nuevaPalabra, espanol: e.target.value })}
+                        <input className="form-traslate-input" type="text" name="espanol" id="espanol" value={nuevaPalabra.espanol} onChange={(e) => setnuevaPalabra({ ...nuevaPalabra, espanol: e.target.value })}
                         />
                     </label>
                     <br></br>
-                    <label>
+                    <label className="form-traslate-label">
                         Inglés:
-                        <input type="text" name="ingles" id="ingles" value={nuevaPalabra.ingles} onChange={(e) => setnuevaPalabra({ ...nuevaPalabra, ingles: e.target.value })}
+                        <input className="form-traslate-input" type="text" name="ingles" id="ingles" value={nuevaPalabra.ingles} onChange={(e) => setnuevaPalabra({ ...nuevaPalabra, ingles: e.target.value })}
                         />
                     </label>
                     <br></br>
-                    <label>
+                    <label className="form-traslate-label">
                         Portugués:
-                        <input type="text" name="portugues" id="portugues" value={nuevaPalabra.portugues} onChange={(e) => setnuevaPalabra({ ...nuevaPalabra, portugues: e.target.value })}
+                        <input className="form-traslate-input" type="text" name="portugues" id="portugues" value={nuevaPalabra.portugues} onChange={(e) => setnuevaPalabra({ ...nuevaPalabra, portugues: e.target.value })}
                         />
                     </label>
-                    <button type="button" onClick={handleAddWord}>Agregar</button>
+                    <br></br>
+                    <button className="dictionary-button" type="button" onClick={handleAddWord}>Agregar</button>
                 </form> 
             </ModalTraslate>
 
@@ -159,10 +160,11 @@ const Dictionary = () => {
                 <p>Puede escribir su palabra en ESPANOL, INGLES O PORTUGUES</p>
                 <div>
                     <label>Palabra:</label>
-                    <input type="text" id="palabraAEliminar" name="palabraAEliminar" value={eliminarPalabra} onChange={(e) => setEliminarPalabra(e.target.value)}
+                    <input className="form-traslate-input" type="text" id="palabraAEliminar" name="palabraAEliminar" value={eliminarPalabra} onChange={(e) => setEliminarPalabra(e.target.value)}
                     />
                 </div>
-                <button type="button" onClick={handleDeleteWord}>Eliminar</button>
+                <br></br>
+                <button className="dictionary-button" type="button" onClick={handleDeleteWord}>Eliminar</button>
             
             </ModalTraslate>
             <ModalTraslate
@@ -174,7 +176,7 @@ const Dictionary = () => {
                 <p>Agregue su palabra y despues el idioma de traduccion</p>
                 <div>
                     <label>Palabra a traducir:</label>
-                    <input type="text" id="palabraTraducida" name="palabraTraducida" value={palabraATraducir} onChange={(e) => setPalabraATraducir(e.target.value)}
+                    <input className="form-traslate-input" type="text" id="palabraTraducida" name="palabraTraducida" value={palabraATraducir} onChange={(e) => setPalabraATraducir(e.target.value)}
                     />
                 </div>
                 <div>
@@ -186,10 +188,10 @@ const Dictionary = () => {
                     </select>*/}
                 </div>
                 <div>
-                    <textarea readOnly value={traduccion}></textarea>
+                    <textarea className="form-traslate-textarea" readOnly value={traduccion}></textarea>
                 </div>
-                
-                <button type="button" onClick={handleTranslateWord}>Traducir</button>
+                <br></br>
+                <button className="traslate-button" type="button" onClick={handleTranslateWord}>Traducir</button>
             </ModalTraslate>
         </div>
 
