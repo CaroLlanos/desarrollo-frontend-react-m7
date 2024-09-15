@@ -109,8 +109,8 @@ const Dictionary = () => {
             </header>
             
             <main className="content-dic">
-                <h1>DICTIONARY USIP</h1>
-                <p>Este <span style={{ fontWeight: 'bold' }}>modulo (diccionario)</span> corresponde <span>al recuperatorio del</span> <span style={{ color: 'red', fontWeight: 'bold' }}>modulo-7</span> ReactJS. URL: https://carollanos.github.io/desarrollo-frontend/dictionary</p>
+                <h1 style={{ fontSize: 'xx-large', fontWeight: 'bold'}}>DICTIONARY USIP</h1>
+                <p>Este <span style={{ fontWeight: 'bold', fontSize: 'larger'}}>modulo (diccionario)</span> corresponde <span style={{ fontSize: 'x-large'}}>al recuperatorio del</span> <span style={{ color: 'red', fontWeight: 'bold', fontSize: 'larger' }}>modulo-7</span> ReactJS. <span style={{fontSize: 'x-large'}}>URL:</span> https://carollanos.github.io/desarrollo-frontend/dictionary</p>
                 
                 <div className="button-group">
                     <button className="dictionary-button" onClick={() => setShowModalAnadir(true)}>Agregar palabra</button>
@@ -119,6 +119,8 @@ const Dictionary = () => {
                 <button className="traslate-button" onClick={() => setShowModalTraducir(true)}>Traducir</button>
 
             </main>
+            <footer className="footer-dic">
+            </footer>
 
             <ModalTraslate
                 visible={showModalAnadir}

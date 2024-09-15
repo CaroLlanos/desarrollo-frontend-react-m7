@@ -202,7 +202,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: #ddd;
+  background-color: #c1c0c0;
   border: 2px solid black;
   border-radius: 5px;
   margin-bottom: 20px;
@@ -252,6 +252,17 @@ footer {
   transition: all 0.2s ease-in-out;
 }
 
+.footer-dic{
+  background-color: #c1c0c0;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
 
 /* Style modals dictionary*/
 .notification-traslate {
